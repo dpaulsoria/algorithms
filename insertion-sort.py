@@ -6,7 +6,7 @@ def execution_time(function):
         function(*args, **kwargs)
         final_time = dt.now()
         time_elapsed = final_time - initial_time
-        print(" >> ", time_elapsed.total_seconds(), " seconds")
+        print("t:", time_elapsed.total_seconds(), ":seconds")
     return wrapper
 
 """ 
@@ -26,7 +26,7 @@ for j = 2 to A.length
 def insertion_sort(seq):
     array = seq
     size = len(array)
-    print(f'The size is {size}')
+    print(f'size:{size}:')
     # print(f'The original array is: {array}')
     for i in range(1, size):
         key = array[i]
@@ -55,7 +55,7 @@ def run():
     seq = Sequence()
     it = iter(seq)
     prev = 0
-    for i in range(0, 101):
+    for i in range(0, 10001):
         t = next(it)
         if (prev != 0):
             prev = t
