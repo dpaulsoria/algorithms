@@ -18,14 +18,13 @@ def run():
     seq = Sequence()
     it = iter(seq)
     prev = 0
-    for i in range(0, 100):
+    for i in range(0, 1000):
         t = next(it)
         if (prev != 0):
             prev = t
         tmp = [x for x in range(prev, t)]
         tmp.sort(reverse=True)
-        r = bubble_sort(tmp)
-        print(r)
+        bubble_sort(tmp)
 
 
 if __name__ == '__main__':
