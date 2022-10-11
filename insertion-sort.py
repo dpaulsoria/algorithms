@@ -1,13 +1,4 @@
-from datetime import datetime as dt
-
-def execution_time(function):
-    def wrapper(*args, **kwargs):
-        initial_time = dt.now()
-        function(*args, **kwargs)
-        final_time = dt.now()
-        time_elapsed = final_time - initial_time
-        print("t:", time_elapsed.total_seconds(), ":seconds")
-    return wrapper
+from util import execution_time, Sequence
 
 """ 
 Pseudocode for INSERTION SORT
@@ -23,34 +14,17 @@ for j = 2 to A.length
 
 
 @execution_time
-def insertion_sort(seq):
-    array = seq
-    size = len(array)
-    print(f'size:{size}:')
-    # print(f'The original array is: {array}')
-    for i in range(1, size):
+def insertion_sort(array):
+    for i in range(1, len(array)):
         key = array[i]
         j = i - 1
-        
         while (j >= 0 and array[j] > key):
             array[j + 1] = array[j]
             j -= 1
         array[j + 1] = key
-    
-    # print(f'The final array is: {array}')
     return array
-    
-class Sequence:
-    def __iter__(self):
-        self.a = 1
-        return self
-    
-    def __next__(self):
-        x = self.a
-        self.a += 1
-        return x
-    
 
+@execution_time
 def run():
     seq = Sequence()
     it = iter(seq)
