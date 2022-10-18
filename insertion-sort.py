@@ -24,20 +24,27 @@ def insertion_sort(array):
         array[j + 1] = key
     return array
 
-@execution_time
-def run():
+
+def run(n):
     seq = Sequence()
     it = iter(seq)
     prev = 0
-    for i in range(0, 10001):
+    for i in range(0, n):
         t = next(it)
         if (prev != 0):
             prev = t
         tmp = [x for x in range(prev, t)]
         tmp.sort(reverse=True)
-        insertion_sort(tmp)
+        return tmp
+        
+
+def test():
+    for i in [1000, 2000, 3000, 4000, 5000]:
+        tmp = run(i)
+        print(tmp)
+        
         # print(tmp)
 
 if __name__ == '__main__':
-    run()
+    test()
     
